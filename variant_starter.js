@@ -7,6 +7,33 @@ const insAdjHTML = (el, location, html) =>
 const insAdjEl = (el, location, ins_el) =>
   el.insertAdjacentElement(location, ins_el);
 
+// useful functions
+const getShopifyCart_fetch = async () => {
+  const res = await fetch("/cart.json");
+  return await res.json();
+};
+const getTwikJson = async () => {
+  const { fingerprint } = JSON.parse(localStorage.getItem("twik_store"));
+  let res = await fetch(
+    `https://api.twik.io/twik?origin=${window.location.href}&snippet_id=${TWIK_ID}&fingerprint=${fingerprint}&ref=`
+  );
+  return await res.json();
+};
+const get_CSS_Selector = (element) => {
+  var path = [];
+
+  while (
+    element.nodeName.toLowerCase() != "html" &&
+    (element = element.parentNode) &&
+    path.unshift(
+      element.nodeName.toLowerCase() +
+        (element.id ? "#" + element.id : "") +
+        (element.className ? "." + element.className.replace(/\s+/g, ".") : "")
+    )
+  );
+  return path.join(" > ");
+};
+
 // CODING AREA
 // CODING AREA
 // CODING AREA
