@@ -39,7 +39,7 @@ function mainJS() {
   // --------------------------------------------------------------------------------------------
   insAdjHTML(
     document.head,
-    "beforebegin",
+    "beforeend",
     `
     <style>
         body {
