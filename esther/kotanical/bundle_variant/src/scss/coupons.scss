@@ -1,0 +1,206 @@
+.applied-coupon-div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    background-color: rgba(113, 113, 113, 0.11);
+    padding: 5px;
+}
+
+.applied-coupon-div>div {
+    padding-left: 10px;
+}
+
+.remove-applied-coupon {
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.twik-coupon-radio-input-wrapper {
+    width: 40px;
+    height: 40px;
+    align-items: center;
+}
+
+.twik-coupon-radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.twik-coupon-row.checked {
+    background-color: #fbfcf7;
+}
+
+.twik-coupon-row.checked .twik-radio-dot-wrapper {
+    display: block;
+}
+
+.twik-coupon-radio-invisible-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999999;
+    cursor: pointer;
+}
+
+.twik-radio-circle-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.twik-radio-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid rgb(145, 145, 145);
+    padding: 8px;
+    height: 18px;
+    width: 18px;
+    background-color: rgb(250, 249, 249);
+    border-radius: 50%;
+    border: 1px solid rgb(145, 145, 145);
+}
+
+.twik-radio-dot-wrapper {
+    position: relative;
+    display: none;
+}
+
+.twik-radio-dot {
+    height: 10px;
+    width: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 50%;
+}
+
+.twik-coupons-top-section {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    position: relative;
+    .twik-fixed-box-cls {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.3em;
+        line-height: 1em;
+        width: 20px;
+        height: 20px;
+        text-align:center;
+        cursor: pointer;
+    }
+    span {
+        max-width: 85%;
+    }
+}
+
+.twik-coupons-bottom-section {
+    position: relative;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    .error-message {
+        position: absolute;
+        color: red;
+        top: -5px;
+        text-align: left;
+    }
+}
+
+.twik-coupons-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(100, 100, 100, 0.5);
+    z-index: 999999999;
+}
+
+.twik-coupons-fixed-box {
+    background-color: #f8f9fa;
+    z-index: 99999999999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-rows: 58px 1fr 80px;
+    overflow: hidden;
+    border-radius: 12px;
+    max-width: 800px;
+    min-width: 310px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .apply-coupon-button-wrapper {
+        width: 100%;
+        .apply-coupon-button {
+            width: 100%;
+        }
+    }
+  }
+
+.twik-coupons-fixed-box>div {
+    padding: 12px 20px 12px 20px;
+    
+}
+
+.apply-coupon-button {
+    height: 100%;
+}
+
+.twik-coupons-mid-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.twik-coupon-code {
+    padding: 3px 7px;
+    margin: 5px 0px;
+    border: 2px dashed green;
+}
+
+.twik-coupon-row {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.twik-coupon-row div {
+    margin-right: 10px;
+}
+
+.twik-coupon-message {
+    margin-left: 10px;
+}
+
+.apply-coupon-button {
+    padding: 5px 25px;
+    color: #fff;
+    text-transform: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    background: #3a3a3a;
+    border: 0;
+    border-radius: 0;
+    min-height: 42px;
+    height: 42px;
+    text-align: center;
+}
