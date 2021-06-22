@@ -46,7 +46,7 @@ const getHTMLfiles = () => {
 // -------------------------------------------------------------------------------------------------------------
 // html
 getHTMLfiles().forEach((html) =>
-  convert(`src/html/${html}`, `src/.temp/${html}.js`)
+  convert(`src/html/${html}`, `src/temp/${html}.ts`)
 );
 // css
-convert("src/.temp/index.css", "src/.temp/css.js");
+convert("src/temp/index.css", "src/temp/css.ts");

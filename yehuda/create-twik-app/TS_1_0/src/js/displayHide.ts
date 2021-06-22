@@ -1,6 +1,7 @@
-import { qSel } from "../../utils/shortcuts";
-import env from "../../env";
-import sel from "../../selectors";
+import { qSel } from "../utils/shortcuts";
+import sel from "../constants/selectors";
+const $tw = window.$tw;
+
 
 const displayPopup = () => {
   console.log("display");

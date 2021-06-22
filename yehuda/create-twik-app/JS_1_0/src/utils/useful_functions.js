@@ -46,16 +46,6 @@ export const get_CSS_Selector = (element) => {
   return path_array.join(" > ");
 };
 
-// #############################################################################################################
-//
-// GET SNIPPET
-//
-// -------------------------------------------------------------------------------------------------------------
-
-export const getSnippet = (src) => {
-  return fs.readFileSync(path.resolve(__dirname, src));
-};
-
 //
 //
 //
@@ -103,4 +93,20 @@ export const add_or_locate_jQuery = (mainJS) => {
     return;
   }
   mainJS();
+};
+
+// #############################################################################################################
+//
+// GET COOKIE BY NAME
+//
+// -------------------------------------------------------------------------------------------------------------
+/**
+ * Get cookie value by name.
+ * @param {string} name
+ * @returns {string}
+ */
+export const getCookie = (name) => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
 };
