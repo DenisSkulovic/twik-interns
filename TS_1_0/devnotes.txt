@@ -1,0 +1,8 @@
+Add error message for Apply button.
+Move the success and error messages into constants
+On valid input and Apply press show loading icon. Afterwards show an applied coupon with the X, and use the Shopify cart as the source of discount.
+Improve the design a bit.
+Customize the design.
+Leave 2 options for cart button:
+    try to replace the original with the provided selector
+    add a fixed bubble, and provide variables to customize its location

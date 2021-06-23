@@ -1,0 +1,32 @@
+<div class="twik-cart-product">
+    <div class="twik-cart-image-wrapper">
+        <a href="{{url}}">
+            <img src="{{image}}" alt="product-image" class="twik-cart-image">
+        </a>
+    </div>
+    <div class="twik-cart-product-details">
+        <a href="{{url}}">
+            <div class="twik-cart-details-header">
+                {{product_title}}
+            </div>
+        </a>
+        <div class="twik-cart-details-subheader">{{variant_title}}</div>
+        <div class="twik-cart-price">{{final_price}}</div>
+        <div class="twik-cart-product-quantity-container">
+            <div class="twik-cart-product-quantity-wrapper">
+                <div class="twik-quantity-border-div">
+                    <div class="twik-minus-one" data-key="{{key}}">-</div>
+                    <input class="twik-cart-product-quantity-input" type="number" data-key="{{key}}" value={{quantity}}>
+                    <span class="twik-cart-product-quantity-span"></span>
+                    <div class="twik-plus-one" data-key="{{key}}">+</div>
+                </div>
+                <div class="product-loading" style="display:none;">
+                    <i class="fa-1x fa fas fa-spinner fa-pulse product-loading-icon" aria-hidden="true"></i>
+                </div>
+                <div class="twik-remove-item" data-key="{{key}}">
+                    <div>Remove</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
