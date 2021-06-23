@@ -10,7 +10,6 @@
   },
   "name": "bundle_variant",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "build": "node-sass src/index.scss -o src/.temp   &&   node .technical/html_css_to_js.js   &&   webpack",
@@ -19,8 +18,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "jquery": "*",
     "node-sass": "*",
@@ -28,5 +26,6 @@
     "sass": "*",
     "webpack": "*",
     "webpack-cli": "*"
-  }
+  },
+  "description": ""
 }
