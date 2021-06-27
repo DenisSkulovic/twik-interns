@@ -27,27 +27,31 @@ export const closeOverlay = () => {
 };
 
 // ---------------------------------------------------------------
-export const displayAppliedCouponDiv = (coupon = "", requestSuccess = false, empty = false) => {
-  const message = qSel(sel.APPLIED_MESSAGE_COUPON);
+export const displayAppliedCouponDiv = (
+  coupon = "",
+  requestSuccess = false,
+  empty = false
+) => {
   if (empty) {
-    message.innerHTML = "Please enter the coupon code.";
-    message.style.color = "red";
+    $tw(sel.APPLIED_MESSAGE_COUPON_NOCOUPON).show();
     qSel(sel.APPLIED_COUPON).style.display = "none";
   } else if (!requestSuccess) {
-    message.innerHTML = "Failed to apply coupon.";
-    message.style.color = "red";
+    $tw(sel.APPLIED_MESSAGE_COUPON_ERROR).show();
     qSel(sel.APPLIED_COUPON).style.display = "none";
   } else {
-    message.innerHTML = "Coupon applied successfully.";
-    message.style.color = "green";
+    $tw(sel.APPLIED_MESSAGE_COUPON_SUCCESS).show();
     qSel(sel.APPLIED_COUPON).style.display = "flex";
-    qSel(sel.COUPON_NAME).innerHTML = coupon;
+    qSel(sel.COUPON_NAME).innerText = coupon;
   }
   qSel(sel.APPLIED_COUPON_WRAPPER).style.display = "flex";
 };
 
 // ---------------------------------------------------------------
 export const hideAppliedCouponDiv = () => {
+  $tw(sel.APPLIED_MESSAGE_COUPON_NOCOUPON).hide();
+  $tw(sel.APPLIED_MESSAGE_COUPON_SUCCESS).hide();
+  $tw(sel.APPLIED_MESSAGE_COUPON_ERROR).hide();
+
   qSel(sel.APPLIED_COUPON_WRAPPER).style.display = "none";
   qSel(sel.COUPON_NAME).innerHTML = "";
 };
@@ -75,10 +79,18 @@ export const hideProductsList = () => {
 
 // ---------------------------------------------------------------
 export const displayProductLoading = (target: EventTarget) => {
-  ((target as HTMLElement).parentElement!.parentElement!.querySelector(".product-loading")! as HTMLElement).style.display = "flex"
-}
+  (
+    (target as HTMLElement).parentElement!.parentElement!.querySelector(
+      ".product-loading"
+    )! as HTMLElement
+  ).style.display = "flex";
+};
 
 // ---------------------------------------------------------------
 export const hideProductLoading = (target: EventTarget) => {
-  ((target as HTMLElement).parentElement!.parentElement!.querySelector(".product-loading")! as HTMLElement).style.display = "none"
-}
+  (
+    (target as HTMLElement).parentElement!.parentElement!.querySelector(
+      ".product-loading"
+    )! as HTMLElement
+  ).style.display = "none";
+};

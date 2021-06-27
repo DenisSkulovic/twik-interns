@@ -2,7 +2,7 @@
   <div id="twik-sidebar-cart">
     <div class="twik-cart-row twik-cart-header-wrapper">
       <div class="twik-cart-header">
-        <a href="/cart">Cart</a>
+        <a href="/cart">{{cart}}</a>
         <div class="twik-cart-close-wrapper">
           <div class="twik-cart-close">
             <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14">
@@ -16,14 +16,14 @@
       <div style="display: none;" class="twik-cart-product-list">
 
       </div>
-      <div class="twik-cart-empty">Your cart is empty</div>
+      <div class="twik-cart-empty">{{cart_empty_text}}</div>
     </div>
     <div class="twik-cart-row twik-cart-footer">
       <div class="twik-cart-apply-coupon-wrapper">
         <div class="twik-apply-coupon-form-wrapper">
           <form class="twik-apply-coupon-form">
-            <input type="text" class="twik-apply-coupon-input" placeholder="Enter coupon code"></input>
-            <button type="submit" class="twik-apply-coupon-button">Apply</button>
+            <input type="text" class="twik-apply-coupon-input" placeholder="{{apply_coupon_placeholder_text}}"></input>
+            <button type="submit" class="twik-apply-coupon-button">{{apply_btn_text}}</button>
           </form>
         </div>
         <div class="twik-applied-coupon-container" style="display:none;">
@@ -42,7 +42,11 @@
               <div class="remove-applied-coupon">x</div>
             </div>
           </div>
-          <div class="twik-applied-coupon-message"></div>
+          <div class="twik-applied-coupon-message">
+            <div class="success">{{coupon_code_text_success}}</div>
+            <div class="error">{{coupon_code_text_failed}}</div>
+            <div class="nocoupon">{{coupon_code_text_nocoupon}}</div>
+          </div>
         </div>
         <div class="coupon-loading" style="display:none;">
           <i class="fa-2x fa fas fa-spinner fa-pulse coupon-loading-icon" aria-hidden="true"></i>
@@ -51,8 +55,8 @@
       <div class="twik-cart-checkout-btn-wrapper">
         <a href="/checkout" role="button" class="twik-cart-checkout-btn-a">
           <div class="twik-cart-checkout-btn">
-            <span class="twik-cart-checkout-text">CHECKOUT</span>
-            <span style="font-size: 0.25em;">&#9725</span>
+            <span class="twik-cart-checkout-text">{{checkout_text}}</span>
+            <span style="font-size: 0.25em;">&#x2588</span>
             <span class="twik-cart-subtotal">subtotal</span>
           </div>
         </a>
