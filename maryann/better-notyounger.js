@@ -36,29 +36,25 @@ function mainJS() {
 // If a user scrolls up 200 pixels (or any other arbitrary number), activate the popup.
 // Make sure the scroll tracking only applies for mobile devices. 
 
-    if ($(window).width() <= 960) { //all screens less than 960px - are mobile devices
-        var prevY = 0;
-        var currentY = 0;
-        var counterY = 0;
-        sessionStorage.setItem('isPopupShowed', 'no');
-        $(document).scroll(function () {
-            currentY = $(this).scrollTop();
-            console.log('prevY='+prevY+' currentY='+currentY);
-            if ( prevY > currentY && sessionStorage.getItem('isPopupShowed') == 'no') {
-                counterY += prevY - currentY;
-                console.log('counterY='+counterY);
-                if (counterY >= 200) { 
-                    displayPopup();
-                    sessionStorage.setItem('isPopupShowed', 'yes');
-                    console.log('popup')
-                }
+
+if ($(window).width() <= 960) { //all screens less than 960px - are mobile devices
+    window.addEventListener("scroll", scrollFunc);
+    var prevY = 0;
+    var currentY = 0;
+    var counterY = 0;
+    function scrollFunc(){
+        currentY = $(this).scrollTop();
+        if ( prevY >= currentY) {
+            counterY += prevY - currentY;
+            if (counterY >= 200) { 
+                $("#off--wrapper").fadeIn();
+                window.removeEventListener("scroll", scrollFunc);
             }
-            else {
-                counterY = 0;
-            }
-            prevY = currentY;
-        });
-    }
+    
+        }
+        prevY = currentY;
+    };
+}
 
     // For mobile, you need to set up scroll tracking.
    
