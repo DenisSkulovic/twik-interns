@@ -1,17 +1,29 @@
 // cut this part and move it manually to the future generic script; put it at the top
 window.twik_generic_cart_customization = {
-  //text:
+  // -------------------Text: ------------------------
+  //cart text:
   cart_text: "Cart",
+  //empty cart text:
   cart_empty_text: "Your cart is empty.",
+  //checkout text:
   checkout_text: "CHECKOUT",
+  //apply text:
   apply_btn_text: "Apply",
+  //applu coupon placeholder text (input):
   apply_coupon_placeholder_text: "Enter coupon code.",
+
+  //---------------------------------------------
   //coupon text:
+  //no coupon message:
   coupon_code_text_nocoupon: "Please enter the coupon code.",
+  //failed message:
   coupon_code_text_failed: "Failed to apply coupon.",
+  // success message:
   coupon_code_text_success: "Coupon applied successfully.",
 
-  //sidebar cart:
+  //---------------------------------------------
+  //--------------------- Style ----------------------------
+  //Sidebar Cart:
   //background color
   twik_sidebar_cart_background_color: "white",
   //shadow color
@@ -19,9 +31,9 @@ window.twik_generic_cart_customization = {
   // line
   twik_cart_row_color: "lightgrey",
 
-  //////////////////////////////////////////////////////////////////////
+  //---------------------------------------------
 
-  //top header
+  //Top Header:
   //remove item text color
   twik_remove_item_text_color: "gray",
   //quantity box border color
@@ -38,17 +50,18 @@ window.twik_generic_cart_customization = {
   twik_cart_price_color: "black",
   //cart text (header) color
   twik_cart_header_wrapper_text_color: "black",
-  //////////////////////////////////////////////////////////////////////
 
-  //footer
+  //---------------------------------------------
+
+  //Footer:
   //checkout button:
   //button background
   twik_cart_checkout_btn_background_color: "grey",
   //button text font color
   twik_cart_checkout_btn_text_color: "white",
-  //////////////////////////////////////////////////////////////////////
+  //---------------------------------------------
 
-  //coupon input:
+  //Coupon input:
   //button background
   twik_apply_coupon_button_background_color: "gray",
   //button text font color
