@@ -1,80 +1,80 @@
-// cut this part and move it manually to the future generic script; put it at the top
-window.twik_generic_cart_customization = {
-  // -------------------Text: ------------------------
-  //cart text:
-  cart_text: "Cart",
-  //empty cart text:
-  cart_empty_text: "Your cart is empty.",
-  //checkout text:
-  checkout_text: "CHECKOUT",
-  //apply text:
-  apply_btn_text: "Apply",
-  //applu coupon placeholder text (input):
-  apply_coupon_placeholder_text: "Enter coupon code.",
+// // cut this part and move it manually to the future generic script; put it at the top
+// window.twik_generic_cart_customization = {
+//   // -------------------Text: ------------------------
+//   //cart text:
+//   cart_text: "Cart",
+//   //empty cart text:
+//   cart_empty_text: "Your cart is empty.",
+//   //checkout text:
+//   checkout_text: "CHECKOUT",
+//   //apply text:
+//   apply_btn_text: "Apply",
+//   //applu coupon placeholder text (input):
+//   apply_coupon_placeholder_text: "Enter coupon code.",
 
-  //---------------------------------------------
-  //coupon text:
-  //no coupon message:
-  coupon_code_text_nocoupon: "Please enter the coupon code.",
-  //failed message:
-  coupon_code_text_failed: "Failed to apply coupon.",
-  // success message:
-  coupon_code_text_success: "Coupon applied successfully.",
+//   //---------------------------------------------
+//   //coupon text:
+//   //no coupon message:
+//   coupon_code_text_nocoupon: "Please enter the coupon code.",
+//   //failed message:
+//   coupon_code_text_failed: "Failed to apply coupon.",
+//   // success message:
+//   coupon_code_text_success: "Coupon applied successfully.",
 
-  //---------------------------------------------
-  //--------------------- Style ----------------------------
-  //Sidebar Cart:
-  //background color
-  twik_sidebar_cart_background_color: "white",
-  //shadow color
-  twik_sidebar_cart_box_shadow_color: "grey",
-  // line
-  twik_cart_row_color: "lightgrey",
+//   //---------------------------------------------
+//   //--------------------- Style ----------------------------
+//   //Sidebar Cart:
+//   //background color
+//   twik_sidebar_cart_background_color: "white",
+//   //shadow color
+//   twik_sidebar_cart_box_shadow_color: "grey",
+//   // line
+//   twik_cart_row_color: "lightgrey",
 
-  //---------------------------------------------
+//   //---------------------------------------------
 
-  //Top Header:
-  //remove item text color
-  twik_remove_item_text_color: "gray",
-  //quantity box border color
-  twik_quantity_border_div_color: "lightgrey",
-  //quantity box inside numbers
-  twik_quantity_inside_div_color: "black",
-  //quantity box inside text
-  twik_cart_product_quantity_input_color: "black",
-  //quantity box inside background
-  twik_cart_product_background_input_color: "white",
-  //cart selected item text color
-  twik_cart_details_header_text_color: "black",
-  //cart price color
-  twik_cart_price_color: "black",
-  //cart text (header) color
-  twik_cart_header_wrapper_text_color: "black",
+//   //Top Header:
+//   //remove item text color
+//   twik_remove_item_text_color: "gray",
+//   //quantity box border color
+//   twik_quantity_border_div_color: "lightgrey",
+//   //quantity box inside numbers
+//   twik_quantity_inside_div_color: "black",
+//   //quantity box inside text
+//   twik_cart_product_quantity_input_color: "black",
+//   //quantity box inside background
+//   twik_cart_product_background_input_color: "white",
+//   //cart selected item text color
+//   twik_cart_details_header_text_color: "black",
+//   //cart price color
+//   twik_cart_price_color: "black",
+//   //cart text (header) color
+//   twik_cart_header_wrapper_text_color: "black",
 
-  //---------------------------------------------
+//   //---------------------------------------------
 
-  //Footer:
-  //checkout button:
-  //button background
-  twik_cart_checkout_btn_background_color: "grey",
-  //button text font color
-  twik_cart_checkout_btn_text_color: "white",
-  //---------------------------------------------
+//   //Footer:
+//   //checkout button:
+//   //button background
+//   twik_cart_checkout_btn_background_color: "grey",
+//   //button text font color
+//   twik_cart_checkout_btn_text_color: "white",
+//   //---------------------------------------------
 
-  //Coupon input:
-  //button background
-  twik_apply_coupon_button_background_color: "gray",
-  //button text font color
-  twik_apply_coupon_button_text_color: "white",
-  //button border
-  twik_apply_coupon_button_border_color: "gray",
-  //input border
-  twik_apply_coupon_input_border_color: "gray",
-  //input background color
-  twik_apply_coupon_input_background_color: "white",
-  //input text color
-  twik_apply_coupon_placeholder_color: "gray",
-};
+//   //Coupon input:
+//   //button background
+//   twik_apply_coupon_button_background_color: "gray",
+//   //button text font color
+//   twik_apply_coupon_button_text_color: "white",
+//   //button border
+//   twik_apply_coupon_button_border_color: "gray",
+//   //input border
+//   twik_apply_coupon_input_border_color: "gray",
+//   //input background color
+//   twik_apply_coupon_input_background_color: "white",
+//   //input text color
+//   twik_apply_coupon_placeholder_color: "gray",
+// };
 
 // IN CASE THE VARIANT NEEDS TO BE TWEAKABLE:
 // replace "window.$tw = require("jquery");" with a manual addition of minified jquery into readable final

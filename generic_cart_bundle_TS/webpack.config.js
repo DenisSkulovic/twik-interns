@@ -1,7 +1,7 @@
 const path = require("path");
 module.exports = {
   entry: "./build/main.js",
-  mode: "development",
+  mode: "production",
   // devtool: "source-map",
   output: {
     filename: "final.js",
