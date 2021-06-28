@@ -1,4 +1,3 @@
-
 // Declare global variables
 
 let bubbleColor = "indianred";
