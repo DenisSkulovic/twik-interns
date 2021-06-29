@@ -77,3 +77,24 @@ export const getCookie = (name: string) => {
   const parts = value.split(`; ${name}=`);
   return parts.length === 2 ? parts.pop()?.split(";").shift() : "";
 };
+
+
+
+// #############################################################################################################
+//
+// GENERATE RANDOM NUMBER OF SPECIFIED LENGTH
+//
+// -------------------------------------------------------------------------------------------------------------
+/**
+ * Generate random number of specified length.
+ */
+export const generateRandomNumber = (len: number) => {
+  let maximum = 9;
+  let minimum = 0;
+  let num_str = "";
+  for (let i = 0; i < len; i++) {
+    num_str += `${Math.floor(Math.random() * (maximum - minimum + 1)) + minimum
+      }`;
+  }
+  return num_str;
+};

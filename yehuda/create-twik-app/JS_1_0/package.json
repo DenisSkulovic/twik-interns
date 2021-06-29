@@ -1,6 +1,9 @@
 {
   "watch": {
     "build": {
+      "ignore": [
+        "src/temp"
+      ],
       "patterns": [
         "src"
       ],

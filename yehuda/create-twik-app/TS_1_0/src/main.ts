@@ -1,8 +1,3 @@
-// IN CASE THE VARIANT NEEDS TO BE TWEAKABLE:
-// replace "window.$tw = require("jquery");" with a manual addition of minified jquery into readable final
-// and inside of the variant get tweaked values from object attached to window
-// Add manually a section to a minified script that attaches the variables object to the window
-
 // add jquery
 window.$tw = require("jquery");
 const $tw = window.$tw;
