@@ -21,13 +21,13 @@ let imageBackground =
 let bannerTopText = "What's your go-to essential oil?";
 
 //Customize text size
-let bannerTopTextSize = "26px"
+let bannerTopTextSize = "26px";
 
 //Customize bottom text or message (second text on display)
 let bannerTextlink = "Take our quiz & find out more";
 
 //Customize second text size
-let bannerLinkSize = "16px"
+let bannerLinkSize = "16px";
 
 //Customize link, URL of the page the link goes to
 let bannerLink = "https://kotanical.ie/pages/quiz";
@@ -129,6 +129,8 @@ function mainJS() {
             padding:20px;
             margin:0;
             text-align:center;
+            margin-top: ${marginTopBanner};
+            margin-bottom: ${marginTopBanner};
            
         }
     }
