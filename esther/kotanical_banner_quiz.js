@@ -6,7 +6,7 @@ let selector = `#r-1623249372249`;
 // margin top and bottom of the banner, must include px at the end of the number.
 let marginTopBanner = "100px";
 
-// Customize font color of the text and  link to the quiz
+// Customize font color of the text and link to the quiz
 let textColor = "white";
 
 // Customize font color of the text and  link to the quiz when the mouse is over the text
@@ -20,8 +20,14 @@ let imageBackground =
 //Customize top text or message (first text on display)
 let bannerTopText = "What's your go-to essential oil?";
 
+//Customize text size
+let bannerTopTextSize = "26px"
+
 //Customize bottom text or message (second text on display)
 let bannerTextlink = "Take our quiz & find out more";
+
+//Customize second text size
+let bannerLinkSize = "16px"
 
 //Customize link, URL of the page the link goes to
 let bannerLink = "https://kotanical.ie/pages/quiz";
@@ -83,24 +89,26 @@ function mainJS() {
     background-size: cover;
     background-attachment: initial;
     background-position: 0 center;
-    // position:fixed;
     z-index: 9999999999999999999999999999999999;
     }
 
 
     .twik-banner-title-header{
-        font-weight: bold;
-        color:${textColor};
-        font-family: 'Poppins', sans-serif;
-
+    font-weight: bold;
+    color:${textColor};
+    font-family: 'Poppins', sans-serif;
+    font-size: ${bannerTopTextSize};
 
     }
 
     .twik-banner-take-quiz-link{
-        text-decoration: none;
-        color:${textColor};
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color:${textColor};
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid;
+    padding-bottom: 3px;
+    font-size: ${bannerLinkSize}
 
     }
 
@@ -135,7 +143,7 @@ function mainJS() {
 
   <section class="twik-banner-quiz-banner">
   <div class="twik-banner-quiz-content">
-      <h2 class="twik-banner-title-header">${bannerTopText}</h2>
+      <h1 class="twik-banner-title-header">${bannerTopText}</h1>
       <a class="twik-banner-take-quiz-link" href=${bannerLink}>${bannerTextlink}</a>
   </div>
 </section>
