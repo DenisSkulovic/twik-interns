@@ -1,42 +1,10 @@
 // Customize the color settings down below
-
 // Select area where the banner should be display
 let selector = `body`;
-
-// Customize font color of the text and link to the quiz
-let textColor = "black";
-
-// Customize font color of the text and  link to the quiz when the mouse is over the text
-let linkToQuizColor = "white";
-
-// Customize background color of the link button and  link to the quiz when the mouse is over the text
-let linkBackgroundColor = "#c07282";
-
-// Customize color of the X right corner
-let twikCloseButton = "white";
 
 // Customize the background Picture. Use url link inside double quotes   "your link ";
 let imageBackground =
   "https://github.com/DenisSkulovic/twik-interns/blob/main/esther/unnamed.jpg?raw=true";
-
-// let imageBackground =
-//   "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-15/182918538_112262551017131_3458862427693329672_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=8ae9d6&_nc_ohc=UKXGbOqo4lwAX-uFGa9&_nc_ht=scontent-ort2-1.cdninstagram.com&oh=ae536566b3badd63cb7a5a9be1f8a9f3&oe=60E31606";
-
-//background color
-let popUpBackgroundColor = "white";
-
-// Customize the text down below
-//Customize top text or message (first text on display)
-let popUpTopText = "What's your go-to essential oil?";
-
-//Customize text size
-let popUpTopTextSize = "20px";
-
-//Customize bottom text or message (second text on display)
-let popUpTextLink = "Take our quiz & find out more";
-
-//Customize second text size
-let popUpLinkSize = "16px";
 
 //Customize link, URL of the page the link goes to
 let popUpLink = "https://kotanical.ie/pages/quiz";
@@ -44,7 +12,7 @@ let popUpLink = "https://kotanical.ie/pages/quiz";
 // declare global variables
 let hidePopup;
 let displayPopup;
-let showIt;
+let showPopup;
 // ##########################################################################################
 
 // Website fixes
@@ -77,17 +45,11 @@ if (window.jQuery) {
 
 // start defining functions
 function mainJS() {
-  //   displayPopup = () => {
-  //     $(".twik-banner-quiz-banner").show();
-  //     $(".twik-overlay").show();
-  //     console.log("popup");
-  //   };
-
-  showIt = () => {
+  showPopup = () => {
     document.querySelector("#off--overlay").style.visibility = "visible";
     document.querySelector("#off--popup").style.visibility = "visible";
   };
-  setTimeout(() => showIt(), 3000); // after 3 seconds
+  setTimeout(() => showPopup(), 1500); // after 1.5 seconds
 
   hidePopup = () => {
     $(".twik-banner-quiz-banner").fadeOut("fast");
@@ -104,120 +66,107 @@ function mainJS() {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
     <style>
-     body,
-     html {
-         margin: 0;
-         padding: 0;
-     }
-
     
      .twik-banner-quiz-banner {
-         display: block; 
+         display: block;
          visibility: hidden;
          margin: 0 auto;
          position: fixed;
          top: 50%;
          left: 50%;
          transform: translate(-50%, -50%);
-         height: auto; 
-         width: 400px;
-         padding: 10px 10px;
+         height: auto;
+         max-width: 540px;
+         font-weight:300;
+        //  padding: 20px 20px;
          box-sizing: border-box;
-         z-index: 999999999999999999999999999999999999999999999999999999999;
+         background: white;
+         z-index: 99999999999999999999999;
+         animation-name: animate;
+         animation-duration: 4s
      }
-
-  
-    .banner-content-border-close{
-        background: ${popUpBackgroundColor};
-        padding:10px;
-    }
+     @keyframes animate{
+        0% 
+       {
+           top: 0px;
+       }
        
-    
+       100% 
+       {
+           top: 50%;
+       
+       }
+    } 
+       
+
      .twik-overlay {
-        display: block; 
+        display: block;
         visibility: hidden;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, .5);
-        z-index: 999999999999999999999999999999999999999999999999999999999;
+        background-color: rgba(0, 0, 0, 0.65);
+        z-index: 9999999999999999999999999999;
     }
-
-
-
 
      .twik-top-picture-banner{
         max-width: 100%;
         height: 50%;
-     }
-
-     .popup-border{
-        border: 1px solid black;
-        padding:10px;
 
      }
-     
+
      .twik-popup-close {
-        color: ${twikCloseButton};
-        font-size: 30px;
-        text-decoration: none;
-        cursor: pointer;
+        color: white;
+        font-size: 18px;
         position: absolute;
-        right: -28px;
-        top: -20px;
-        height: 37px;
-
-    }
-    .close-button-style{
-        cursor: pointer;
-        display: inline-block;
-        width: 37px;
-        height: 37px;
-        border-width: 1px;
-        border-radius: 50%;
-        border-style: solid;
-        position: relative;
-
+        right: 0px;
+        top: 1px;
+        display: block;
+        cursor:pointer;
     }
 
-    .x-close{
-        text-align:center;
-        transform: translate(2%, -21%);
-    }
+     
 
+     .twik-inside-pop-up{
+         font-family: inherit;
+         text-align:center;
+         text-transform: uppercase;
+     }
 
      .twik-banner-title-header {
-         color:${textColor};
-         font-family: 'Poppins',sans-serif;
-         font-size: ${popUpTopTextSize};
-         text-align:center;
+         color:black;
+         font-size: 20px;
          padding:0;
          margin-top: 20px;
-         text-transform: uppercase;
 
      }
 
      .twik-banner-take-quiz-link {
-         text-decoration: none;
-         text-align:center;
-         display: block;         
-         color:${textColor};
-         font-family: 'Poppins', sans-serif;
-         text-transform: uppercase;
-         border: 1px solid black;
-         padding:5px;
-         font-size: ${popUpLinkSize};
+         display: block;
+         color:white;
+         background: #c07282;
+         padding:2%;
+         font-size: 16px;
+     }
+    
+     .twik-link-button-style{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        transition: all 0.4s ease 0s;
+
      }
 
+
      .twik-banner-take-quiz-link:hover {
-         color: ${linkToQuizColor};
-        background:${linkBackgroundColor};
-        border:${linkBackgroundColor};
-    }
+        transition: all 0.4s ease 0s;
+        padding:3%;
+     }
 
 
 
@@ -234,77 +183,72 @@ function mainJS() {
          
 
          .twik-banner-title-header{
-            font-size:15px;
+            font-size:20px;
          }
 
          .twik-banner-take-quiz-link{
-            font-size:10px;
+            font-size:15px;
          }
 
          img{
              height:auto;
              width:100%;
          }
-
-         .twik-popup-close {
-            font-size: 15px;
-            height: 23px;
-            position: absolute;
-            right: 1px;
-            top: 1px;
-        }
-
-        .close-button-style{
-            cursor: pointer;
-            display: inline-block;
-            width: 18.5px;
-            height: 18.5px;
-            
-    
-        }
-    
-        .x-close{
-            text-align:center;
-        }
          
      }
+     .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;  /* Preferred icon size */
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+      
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+      
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+      
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+      }
 
-
+   
 
  </style>
     `
   );
-  let QuizBanner = `
+  let quizBanner = `
+<div id="off--overlay" class="twik-overlay"></div>
+<section id="off--popup" class="twik-banner-quiz-banner">
+    <div id="close" class="twik-popup-close">
+    <span class="material-icons md-48">close</span>
+ 
+    </div>
 
-  <div id="off--overlay" class="twik-overlay"></div>
-
- <section id="off--popup" class="twik-banner-quiz-banner">
-
-     <div id="close" class="twik-popup-close"">
-      <div class=" close-button-style">
-         <div class="x-close">&times;</div>
-     </div>
-     </div>
-     <div class="banner-content-border-close">
-         <div class="banner-content-border">
-             <div class="popup-border">
-                 <div class="twik-top-picture-banner">
-                     <img src=${imageBackground}>
-                     <div class="twik-banner-quiz-content">
-
-                         <h1 class="twik-banner-title-header">${popUpTopText}</h1>
-                         <a class="twik-banner-take-quiz-link" href=${popUpLink}>${popUpTextLink}</a>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </section>
-
+    <div class="twik-top-picture-banner">
+        <img src="${imageBackground}">
+    </div>
+    <div class="twik-inside-pop-up">
+        <h1 class="twik-banner-title-header">What's your go - to essential oil?</h1>
+        <div class="twik-link-button-style">
+            <a class="twik-banner-take-quiz-link" href="https://kotanical.ie/pages/quiz">Take our quiz</a>
+        </div>
+    </div>
+    </div>
+</section>
     
 `;
 
-  document.querySelector(selector).insertAdjacentHTML("beforeend", QuizBanner);
+  document.querySelector(selector).insertAdjacentHTML("beforeend", quizBanner);
 
   // ##########################################################################################
 
@@ -319,13 +263,9 @@ function mainJS() {
 
   // ##########################################################################################
 
-  $("#close").on("click", function () {
-    console.log("click");
-    hidePopup();
-  });
-
-  $(".twik-overlay").on("click", function () {
+  $("#close, .twik-overlay").on("click", function () {
     console.log("click");
     hidePopup();
   });
 }
+
