@@ -1,34 +1,18 @@
 
 // Declare global variables
 
-let bubbleColor = "indianred";
+let bubbleColor = "grey";
+let iconColor = "white";
+let modalColor = "grey"
 
-let modalColor = "white";
-let modalTextColor = "black";
-let modalContactUsColor = " black"
-//let iconBackgroundColor = "grey";
+
 
 let apiSpreadsheet = "https://api.apispreadsheets.com/data/13447/";
 
 
-let displaycallBubble;
-let hidecallBubble;
+let displayBubble;
+let hideBubble;
 
-current = window.location.pathname;
-    
-if (current == '/') {
-  console.log('Is the homepage.')
-} else {
-  console.log('Not on the homepage.')
-}
-
-const scrollButton = document.getElementById('menu-item-1844')
-if (scrollButton) {
-  scrollButton.addEventListener('click', function (e) {
-    e.preventDefault();
-   window.scrollTo({top: 0, behavior: 'smooth'});
-  })
-}
 
 // Add jQuery for animations
 if (window.jQuery) {
@@ -52,14 +36,14 @@ if (window.jQuery) {
 function mainJS() {
 
  
-  displaycallBubble = () => {
+  displayBubble = () => {
     $("#modal-popup-form").show();
     console.log("show bubble");
   };
   
-  hidemodalPopup = () => {
+  hideBubble = () => {
     $("#modal-popup-form").fadeOut();
-    $("#call-bubble").fadeIn("fast");
+    $("#envelope-bubble").fadeIn("fast");
 };
 
 // Inject CSS and HTML
@@ -76,31 +60,36 @@ document.body.insertAdjacentHTML(
 
     <style>
 
-      #call-bubble {
+      #envelope-bubble {
         position: fixed;
-        z-index: 1; /* z-index puts its element before or after other elements with different z-index. if my z-index is higher I will be in the front, and vice versa */
+        z-index: 11111111; /* z-index puts its element before or after other elements with different z-index. if my z-index is higher I will be in the front, and vice versa */
         right: 80px;
         bottom: 80px;
     }
 
-    .call-btn-container {
-      background: ${bubbleColor};
-      border-radius: 100%;
-      cursor: pointer;
-        width: 50px;
-        height: 50px;
-    }
+      .btn-btn-container {
+        background: ${bubbleColor};
+        border-radius: 100%;
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+      }
 
-      .call-icon-btn {
+      .message-icon-btn {
         height: 100%;
         cursor: pointer;
         align-items: center;
         display: flex;
         justify-content: center;
         text-decoration: none;
-        font-size: 30px;
-        line-height: 30px;
+        font-size: 25px;
+       
+       
     }
+
+      .blackiconcolor {
+        color: ${iconColor};
+      }
 
       .modal-popup {
         background: ${modalColor};
@@ -110,12 +99,12 @@ document.body.insertAdjacentHTML(
         text-align: center;
         margin-left: 40%
         width: 200px;
-        height: 120px;
+        height: 300px;
         bottom: 15px;
         right: 75px;
         border: 1px solid black;
         border-radius: 5px;
-        z-index: 3;
+        z-index: 999999999;
       }
     
       .modal-close {
@@ -133,11 +122,11 @@ document.body.insertAdjacentHTML(
     .contact-header {
       position: relative;
         margin-bottom: 12px;
-        color: ${modalTextColor};
+        
     }
 
     .contact-header h2 {
-      color: ${modalContactUsColor};
+      
       margin-bottom: 0px;
     }
 
@@ -198,9 +187,9 @@ document.body.insertAdjacentHTML(
     "beforeend",
 
     `
-        <div class="call-icon call-btn-container" id="call-bubble">
-          <div id="button-open-phone-popup" title="+1 (800) 406-3026" class="call-icon-btn btn btn-phone text-center">
-            <i class="fa fa-phone" aria-hidden="true"></i>
+        <div class="envelope-icon btn-btn-container" id="envelope-bubble">
+          <div id="message-btn" class="message-icon-btn btn btn-phone text-center">
+            <i class="fa fa-envelope blackiconcolor"></i>
           </div>
         </div>
 
@@ -225,41 +214,35 @@ document.body.insertAdjacentHTML(
         </div>
       </div>
     
-         
         
-      
-
     `
 );
 
 // Set event Listeners
 
 
-$("#send-phone").on("click", function(event) {
-  event.stopPropagation();
-  console.log('debug apiSpreadsheet')
-  fetch(apiSpreadsheet, {
-    method: 'POST',
-    body: JSON.stringify({
-      data: [
-        {
-          phone: $('#phoneBubble').val()
-        }
-      ]}
-    )
-  }).then(() => {
-    alert('Thank you!')
-  })
-});
+// $("#send-phone").on("click", function(event) {
+//   event.stopPropagation();
+//   console.log('debug apiSpreadsheet')
+//   fetch(apiSpreadsheet, {
+//     method: 'POST',
+//     body: JSON.stringify({
+//       data: [
+//         {
+//           phone: $('#phoneBubble').val()
+//         }
+//       ]}
+//     )
+//   }).then(() => {
+//     alert('Thank you!')
+//   })
+// });
 
-$("#call-service-btn").on("click", function(event) {
-  event.stopPropagation();
-  window.open('tel:123');
-});
-$("#button-open-phone-popup").on("click", function(event) {
+
+$("#message-btn").on("click", function(event) {
   event.stopPropagation();
   console.log("click");
-  displaycallBubble();
+  displayBubble();
 });
 
 $("#modal-popup-form").on("click", (event) => {
@@ -269,12 +252,8 @@ $("#modal-popup-form").on("click", (event) => {
 $(".modal-close").on("click", function (event) {
   event.stopPropagation();
   console.log("click");
-  hidemodalPopup();
+  hideBubble();
 });
-
-
-
-
 
 
 }
