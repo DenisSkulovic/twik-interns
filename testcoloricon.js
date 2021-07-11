@@ -33,7 +33,7 @@ const scrollButton = document.getElementById('menu-item-1844')
 if (scrollButton) {
   scrollButton.addEventListener('click', function (e) {
     e.preventDefault();
-   window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({top: 0, behavior: 'smooth'});
   })
 }
 
@@ -76,7 +76,6 @@ document.body.insertAdjacentHTML(
 
   <style>
 
-
     #call-bubble {
       position: fixed;
       z-index: 2222222222; /* z-index puts its element before or after other elements with different z-index. if my z-index is higher I will be in the front, and vice versa */
@@ -87,20 +86,21 @@ document.body.insertAdjacentHTML(
       cursor: pointer;
       width: ${bubbleWidth};
       height: ${bubbleHeight};
+      
     }
 
-    #button-open-phone-popup {
-        height: 100%;
-        cursor: pointer;
-        align-items: center;
-        display: flex;
-        text-decoration: none;
-        font-size: 30px;
-        
+    #phone-button {
+      height: 100%;
+      cursor: pointer;
+      align-items: center;
+      font-size: 30px;
+      display: flexed;
+     
     }
 
     .blackiconcolor {
-      color: ${iconColor} ;
+      color: ${iconColor};
+    
     }
 
   </style>
@@ -112,13 +112,12 @@ document.body.insertAdjacentHTML(
     "beforeend",
 
     `    
-        <div class="call-icon call-btn-container" id="call-bubble">
-            <div id="button-open-phone-popup" title="+972542884123" class="call-icon-btn btn btn-phone text-center">
-                <i class="fa fa-phone blackiconcolor">
+        <div class="call-icon" id="call-bubble">
+            <div id="phone-button" title="+972542884123" class="btn btn-phone text-center">
+                <i class="fa fa-phone blackiconcolor"></i>
             </div>
         </div>
-
-    
+     
     `
 );
 
@@ -130,7 +129,7 @@ $("#call-bubble").on("click", function(event) {
   displaycallBubble();
 });
 
-$("#button-open-phone-popup").on("click", function(event) {
+$("#phone-button").on("click", function(event) {
   event.stopPropagation();
   window.open('tel:+972542884123');
   
