@@ -71,9 +71,7 @@ document.body.insertAdjacentHTML(
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-
-
-    <style>
+  <style>
 
       #call-bubble {
         position: fixed;
@@ -199,9 +197,9 @@ document.body.insertAdjacentHTML(
         height: 35px;
       }
 
-    </style>
+  </style>
 
-    `
+  `
   );
 
 document.body.insertAdjacentHTML(
@@ -240,7 +238,6 @@ document.body.insertAdjacentHTML(
 
 // Set event Listeners
 
-
 $("#send-phone").on("click", function(event) {
   event.stopPropagation();
   console.log('debug apiSpreadsheet')
@@ -278,10 +275,5 @@ $(".modal-close").on("click", function (event) {
   console.log("click");
   hidemodalPopup();
 });
-
-
-
-
-
 
 }
