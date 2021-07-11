@@ -227,11 +227,13 @@ function mainJS() {
   // Website fixes
 
   //Hide quiz banner
-  document.querySelector(selectorHidde).style.display = "none";
 
   // Style essential oils section - direction reverse
-  document.querySelector(selectorReverse).style.display = "flex";
-  document.querySelector(selectorReverse).style.flexDirection = "row-reverse";
+  try {
+    document.querySelector(selectorHidde).style.display = "none";
+    document.querySelector(selectorReverse).style.display = "flex";
+    document.querySelector(selectorReverse).style.flexDirection = "row-reverse";
+  } catch (error) {}
 
   // ##########################################################################################
 
