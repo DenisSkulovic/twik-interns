@@ -46,8 +46,8 @@ if (window.jQuery) {
 // start defining functions
 function mainJS() {
   showPopup = () => {
-    document.querySelector("#off--overlay").style.visibility = "visible";
-    document.querySelector("#off--popup").style.visibility = "visible";
+    document.querySelector("#off--overlay").style.display = "block";
+    document.querySelector("#off--popup").style.display = "block";
   };
   setTimeout(() => showPopup(), 1500); // after 1.5 seconds
 
@@ -71,20 +71,18 @@ function mainJS() {
     <style>
     
      .twik-banner-quiz-banner {
-         display: block;
-         visibility: hidden;
+         display: none;
          margin: 0 auto;
          position: fixed;
-         top: 50%;
+         top: 40%;
          left: 50%;
          transform: translate(-50%, -50%);
          height: auto;
-         max-width: 540px;
+         max-width: 400px;
          font-weight:300;
-        //  padding: 20px 20px;
-         box-sizing: border-box;
          background: white;
          z-index: 99999999999999999999999;
+         border-radius: 5px;
          animation-name: animate;
          animation-duration: 4s
      }
@@ -96,31 +94,36 @@ function mainJS() {
        
        100% 
        {
-           top: 50%;
+           top: 40%;
        
        }
     } 
        
 
      .twik-overlay {
-        display: block;
-        visibility: hidden;
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.65);
+        background-color: rgba(0, 0, 0, 0.5);
         z-index: 9999999999999999999999999999;
     }
 
-     .twik-top-picture-banner{
+     .twik-top-picture-banner {
         max-width: 100%;
         height: 50%;
+        border-radius: 5px;
 
      }
 
-     .twik-popup-close {
+     img {
+      border-radius: 5px;
+    }
+     
+  
+     .twik-popup-close .material-icons{
         color: white;
         font-size: 18px;
         position: absolute;
@@ -136,58 +139,49 @@ function mainJS() {
          font-family: inherit;
          text-align:center;
          text-transform: uppercase;
-     }
-
-     .twik-banner-title-header {
-         color:black;
-         font-size: 20px;
-         padding:0;
+         margin-bottom: 20px;
          margin-top: 20px;
 
      }
 
-     .twik-banner-take-quiz-link {
-         display: block;
-         color:white;
-         background: #c07282;
-         padding:2%;
-         font-size: 16px;
+     .twik-inside-pop-up h1 {
+         color:black;
+         font-size: 20px;
      }
+
+     
     
      .twik-link-button-style{
-        display: flex;
+        display: inline;
         justify-content: center;
-        margin-bottom: 20px;
-        transition: all 0.4s ease 0s;
-
+        color:white;
+        background: #c07282;
+        font-size: 16px;
+        width: 200px;
+        height: 500px;
+        padding: 5px;
+        transition: transform .2s;
      }
 
 
-     .twik-banner-take-quiz-link:hover {
-        transition: all 0.4s ease 0s;
-        padding:3%;
-     }
+     .twik-link-button-style:hover {
+      padding: 7px;
 
-
+    }
 
 
      @media screen and (max-width: 650px) {
         .twik-banner-quiz-banner {
-            width: 90%;
-            height:auto;
-             justify-content: space-between;
-             padding: 20px;
-             margin: 0;
-             text-align: center;
+             width: 90%;
          }
          
 
-         .twik-banner-title-header{
-            font-size:20px;
+         .twik-inside-pop-up h1{
+            font-size:15px;
          }
 
          .twik-banner-take-quiz-link{
-            font-size:15px;
+            font-size:10px;
          }
 
          img{
@@ -196,30 +190,8 @@ function mainJS() {
          }
          
      }
-     .material-icons {
-        font-family: 'Material Icons';
-        font-weight: normal;
-        font-style: normal;
-        font-size: 24px;  /* Preferred icon size */
-        display: inline-block;
-        line-height: 1;
-        text-transform: none;
-        letter-spacing: normal;
-        word-wrap: normal;
-        white-space: nowrap;
-        direction: ltr;
-      
-        /* Support for all WebKit browsers. */
-        -webkit-font-smoothing: antialiased;
-        /* Support for Safari and Chrome. */
-        text-rendering: optimizeLegibility;
-      
-        /* Support for Firefox. */
-        -moz-osx-font-smoothing: grayscale;
-      
-        /* Support for IE. */
-        font-feature-settings: 'liga';
-      }
+
+    
 
    
 
@@ -228,23 +200,27 @@ function mainJS() {
   );
   let quizBanner = `
 <div id="off--overlay" class="twik-overlay"></div>
-<section id="off--popup" class="twik-banner-quiz-banner">
+
+<div id="off--popup" class="twik-banner-quiz-banner">
     <div id="close" class="twik-popup-close">
-    <span class="material-icons md-48">close</span>
- 
+        <span class="material-icons md-48">close</span>
     </div>
 
     <div class="twik-top-picture-banner">
         <img src="${imageBackground}">
     </div>
     <div class="twik-inside-pop-up">
+<<<<<<< HEAD
         <h1 class="twik-banner-title-header">What's your go to essential oil?</h1>
+=======
+        <h1>What's your go - to essential oil?</h1>
+>>>>>>> a78722647ce194c3902bb46f825124b8cb4133bd
         <div class="twik-link-button-style">
-            <a class="twik-banner-take-quiz-link" href="https://kotanical.ie/pages/quiz">Take our quiz</a>
+            <a href="https://kotanical.ie/pages/quiz">Take our quiz</a>
         </div>
     </div>
     </div>
-</section>
+</div>
     
 `;
 
@@ -255,6 +231,7 @@ function mainJS() {
   // Website fixes
 
   //Hide quiz banner
+<<<<<<< HEAD
   try {
     document.querySelector(selectorHidde).style.display = "none";
     document.querySelector(selectorReverse).style.display = "flex";
@@ -262,6 +239,15 @@ function mainJS() {
   } catch (error) {}
 
   // Style essential oils section - direction reverse
+=======
+
+  // Style essential oils section - direction reverse
+  try {
+    document.querySelector(selectorHidde).style.display = "none";
+    document.querySelector(selectorReverse).style.display = "flex";
+    document.querySelector(selectorReverse).style.flexDirection = "row-reverse";
+  } catch (error) {}
+>>>>>>> a78722647ce194c3902bb46f825124b8cb4133bd
 
   // ##########################################################################################
 
