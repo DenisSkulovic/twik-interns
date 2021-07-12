@@ -238,7 +238,7 @@ function mainJS() {
         <img src="${imageBackground}">
     </div>
     <div class="twik-inside-pop-up">
-        <h1 class="twik-banner-title-header">What's your go - to essential oil?</h1>
+        <h1 class="twik-banner-title-header">What's your go to essential oil?</h1>
         <div class="twik-link-button-style">
             <a class="twik-banner-take-quiz-link" href="https://kotanical.ie/pages/quiz">Take our quiz</a>
         </div>
@@ -255,11 +255,13 @@ function mainJS() {
   // Website fixes
 
   //Hide quiz banner
-  document.querySelector(selectorHidde).style.display = "none";
+  try {
+    document.querySelector(selectorHidde).style.display = "none";
+    document.querySelector(selectorReverse).style.display = "flex";
+    document.querySelector(selectorReverse).style.flexDirection = "row-reverse";
+  } catch (error) {}
 
   // Style essential oils section - direction reverse
-  document.querySelector(selectorReverse).style.display = "flex";
-  document.querySelector(selectorReverse).style.flexDirection = "row-reverse";
 
   // ##########################################################################################
 
@@ -268,4 +270,3 @@ function mainJS() {
     hidePopup();
   });
 }
-
