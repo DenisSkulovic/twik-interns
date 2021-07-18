@@ -1,0 +1,188 @@
+// Customize the color settings down below
+
+// declare global variables
+let selector = `body > div.main-container > section:nth-child(3)`;
+
+let calculatePriceMonth;
+let updateQuantityScreen;
+let updateProgressBar;
+// add jQuery for animations
+
+if (window.jQuery) {
+  $ = window.jQuery;
+  mainJS();
+} else {
+  var script = document.createElement("SCRIPT");
+  script.src =
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js";
+  script.type = "text/javascript";
+  // this is doc.ready
+  //-------------------
+  script.onload = function () {
+    var $ = window.jQuery;
+    mainJS();
+  };
+  document.head.appendChild(script);
+}
+
+// start defining functions
+function mainJS() {
+  calculatePriceMonth = () => {
+    let quantity = parseInt(quantityInput.value);
+
+    const price = 20;
+    let cost = price * quantity;
+
+    if (cost >= 2000) {
+      total.innerHTML =
+        "$" + cost.toFixed(2) + " /month" + " or Partner Package, Contact Us";
+    } else {
+      total.innerHTML = "$" + cost.toFixed(2) + " /month";
+      output.style.display = "block";
+    }
+  };
+
+  updateQuantityScreen = () => {
+    let quantity = parseInt(quantityInput.value);
+
+    if (quantity == 1) {
+      output.innerHTML = quantity + " screen";
+    } else {
+      output.innerHTML = quantity + " screens";
+    }
+  };
+
+  updateProgressBar = () => {
+    let selectorCircle = document.getElementById("selector");
+
+    let perc = (quantityInput.value / quantityInput.max) * 100;
+
+    console.log(perc);
+    progressBar.style.width = perc + "%";
+    selectorCircle.style.left = perc + "%";
+  };
+
+  // inject CSS and HTML
+
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    `
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+    <style>
+        .twik-range-slider-calculator {
+            margin: 10% auto;
+            width: 70%;
+            z-index: 99999999999999999999999;
+        }
+        #twik-input-slider{
+          -webkit-appearance: none;
+              width: 100%;
+              height: 7px;
+              border-radius: 3px;
+              background: white;
+              border: 1px solid #ececec !important;
+              outline: none;
+              z-index: 5;
+              margin-top: 20px;
+          }
+      
+          #twik-input-slider::-webkit-slider-thumb{
+          -webkit-appearance: none;
+          width: 48px;
+          height: 48px;
+          cursor: pointer;
+          z-index:3;
+          position: relative;
+          }
+      
+          #selector{
+              position: absolute;
+              bottom: 19px;
+              margin: 0 0px -22px -10px;
+              z-index: 3;
+              width: 20px;
+              height: 20px;
+              background: red;
+              border-radius: 50%;
+          }
+      
+          
+      
+          .twik-inner-banner-content-box {
+            position: relative;
+          }
+      
+          #progressBar{
+              height: 13px;
+              background: #ececec ;
+              border-radius: 1px;
+              position: absolute;
+              top: 67px;
+              left: 0;
+              bottom: 0;
+              
+              z-index: 2;
+          }
+      
+
+        .twik-screen-total-amount,
+        .twik-number-screens-text {
+            text-align: left;
+        }
+
+        .twik-screen-total-amount {
+            margin-top: 20px;
+        }
+
+        .twik-static-amount-price {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    `
+  );
+  let bannerSlider = `
+  <div class="twik-range-slider-calculator">
+  <div class="twik-inner-banner-content-box">
+    <div class="twik-inner-text-display">
+      <div class="twik-screen-total-amount">
+        <span id="number-screen-price"></span>
+      </div>
+      <div class="twik-number-screens-text">
+        <span id="number-screen"></span>
+      </div>
+    </div>
+      <input type="range" min="0" max="200" value="1" name="quantity" class="twik-slider-range-style"
+        id="twik-input-slider">
+        <div id="selector">
+            <div id="selectValue"></div>
+        </div>
+        <div id="progressBar"></div>
+  </div>
+  <div class="twik-static-amount-price">
+    <p>$20 / 1 screen</p>
+  </div>
+</div>
+    
+`;
+  document
+    .querySelector(selector)
+    .insertAdjacentHTML("beforeend", bannerSlider);
+
+  //event listeners
+  let output = document.querySelector("#number-screen");
+  let total = document.querySelector("#number-screen-price");
+  let quantityInput = document.querySelector("#twik-input-slider");
+  let progressBar = document.querySelector("#progressBar");
+
+  calculatePriceMonth();
+  updateQuantityScreen();
+
+  quantityInput.addEventListener("input", calculatePriceMonth);
+  quantityInput.addEventListener("input", updateQuantityScreen);
+  quantityInput.addEventListener("input", updateProgressBar);
+}
